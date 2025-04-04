@@ -9,23 +9,93 @@
       background-color: #e8f5e9;
       color: #2e7d32;
       font-family: Tahoma, Arial, sans-serif;
-      text-align: center;
       padding: 2rem;
+      margin: 0;
     }
+
     header {
       background-color: #4caf50;
       padding: 1rem;
       color: white;
+      text-align: center;
     }
+
     nav a {
       margin: 0 10px;
       color: white;
       text-decoration: none;
       font-weight: bold;
     }
+
     footer {
       margin-top: 2rem;
       color: #555;
+      text-align: center;
+    }
+
+    /* زر الوضع الداكن */
+    #theme-toggle {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background-color: #4caf50;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 24px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      z-index: 999;
+    }
+
+    /* زر البحث */
+    #search-button {
+      position: fixed;
+      bottom: 90px;
+      left: 20px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 20px;
+      cursor: pointer;
+      z-index: 999;
+    }
+
+    #search-box {
+      position: fixed;
+      bottom: 150px;
+      left: 20px;
+      display: none;
+      z-index: 999;
+    }
+
+    #search-box input {
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      width: 200px;
+    }
+
+    .dark-mode {
+      background-color: #1c1c1c;
+      color: #eee;
+    }
+
+    .dark-mode header {
+      background-color: #333;
+    }
+
+    .dark-mode nav a {
+      color: #eee;
+    }
+
+    .dark-mode #theme-toggle,
+    .dark-mode #search-button {
+      background-color: #555;
     }
   </style>
 </head>
@@ -47,5 +117,34 @@
   <footer>
     &copy; 2025 - جميع الحقوق محفوظة
   </footer>
+
+  <!-- زر البحث -->
+  <button id="search-button">🔍</button>
+  <div id="search-box">
+    <input type="text" placeholder="ابحث...">
+  </div>
+
+  <!-- زر تغيير الثيم -->
+  <button id="theme-toggle">☀️</button>
+
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+    const searchBtn = document.getElementById('search-button');
+    const searchBox = document.getElementById('search-box');
+
+    themeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      themeToggle.textContent = body.classList.contains('dark-mode') ? '🌙' : '☀️';
+    });
+
+    searchBtn.addEventListener('click', () => {
+      if (searchBox.style.display === 'none') {
+        searchBox.style.display = 'block';
+      } else {
+        searchBox.style.display = 'none';
+      }
+    });
+  </script>
 </body>
 </html>
