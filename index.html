@@ -6,111 +6,46 @@
   <title>موقعي</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      transition: background 0.3s, color 0.3s;
+      background-color: #e8f5e9;
+      color: #2e7d32;
+      font-family: Tahoma, Arial, sans-serif;
+      text-align: center;
+      padding: 2rem;
     }
     header {
-      background-color: #4CAF50;
-      color: white;
+      background-color: #4caf50;
       padding: 1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 15px;
-      padding: 0;
-      margin: 0;
+      color: white;
     }
     nav a {
+      margin: 0 10px;
       color: white;
       text-decoration: none;
       font-weight: bold;
     }
-    .search-container {
-      position: relative;
-    }
-    .search-button {
-      background-color: white;
-      border: none;
-      padding: 6px 10px;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-    .search-bar {
-      display: none;
-      position: absolute;
-      top: 35px;
-      right: 0;
-      padding: 8px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      width: 200px;
-    }
-    .dark-mode {
-      background-color: #121212;
-      color: #ffffff;
-    }
-    .theme-toggle {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      width: 40px;
-      height: 40px;
-      border-radius: 8px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    .theme-toggle:hover {
-      background-color: #388E3C;
-    }
-    main {
-      padding: 2rem;
+    footer {
+      margin-top: 2rem;
+      color: #555;
     }
   </style>
 </head>
 <body>
   <header>
+    <h1>مرحبا بك في موقعي الشخصي</h1>
     <nav>
-      <ul>
-        <li><a href="index.html">الرئيسية</a></li>
-        <li><a href="articles.html">مقالات</a></li>
-        <li><a href="#">ألعاب</a></li>
-        <li><a href="contact.html">اتصل بي</a></li>
-      </ul>
+      <a href="index.html">الرئيسية</a>
+      <a href="articles.html">مقالاتي</a>
+      <a href="contact.html">اتصل بي</a>
     </nav>
-    <div class="search-container">
-      <button class="search-button" onclick="toggleSearch()">بحث</button>
-      <input type="text" class="search-bar" placeholder="اكتب للبحث...">
-    </div>
   </header>
 
   <main>
-    <h1>مرحبًا بك في موقعي</h1>
-    <p>هذا مثال على موقع بسيط وجميل. يمكنك التعديل هنا وإضافة مقالاتك.</p>
+    <h2>أهلاً وسهلاً!</h2>
+    <p>هنا أشارك مقالاتي وأفكاري بكل بساطة.</p>
   </main>
 
-  <button class="theme-toggle" onclick="toggleTheme()" title="تغيير المظهر">☀️</button>
-
-  <script>
-    function toggleSearch() {
-      const bar = document.querySelector('.search-bar');
-      bar.style.display = bar.style.display === 'block' ? 'none' : 'block';
-    }
-
-    function toggleTheme() {
-      const body = document.body;
-      const btn = document.querySelector('.theme-toggle');
-      body.classList.toggle('dark-mode');
-      btn.textContent = body.classList.contains('dark-mode') ? '🌙' : '☀️';
-    }
-  </script>
+  <footer>
+    &copy; 2025 - جميع الحقوق محفوظة
+  </footer>
 </body>
 </html>
